@@ -74,7 +74,6 @@ align-items: center;
   border: 1px solid green;
   margin-top: 2rem;
   cursor: pointer;
-  
 }
 @media (min-width:600px) {
   .banner .title {
