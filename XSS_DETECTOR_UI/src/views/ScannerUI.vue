@@ -4,8 +4,8 @@
     <div class="left">
     <div style="width:80%;">
     <div class="ScanInput">
-        <input type="text" placeholder="Enter Website URL">
-        <span><i class="search-icon fa-solid  fa-magnifying-glass"></i></span>
+        <input type="text" placeholder="Enter Website URL" v-model="searchInput">
+        <span @click="ScanFunc"><i class="search-icon fa-solid  fa-magnifying-glass"></i></span>
     </div>
     </div>
     
@@ -20,7 +20,43 @@
 </template>
 
 <script>
-    export default {
+import axios from 'axios'
+export default {
+    data() {
+        return {
+            searchInput: ''
+        }
+    },
+    
+        methods: {
+        ScanFunc()
+            {
+                if (this.searchInput == '')
+                {
+                    alert("Enter website Url")
+                } else
+                {
+                    alert(this.searchInput);
+                    let data = { "scanWeb": this.searchInput }
+                    axios.post("/api/scan_website", data)
+                        .then((res) => {
+
+                            
+                        })
+                        .catch((err) => {
+
+
+                            
+                        })
+                    
+                    
+
+                }
+                
+
+            
+        }
+        },
         
     }
 </script>
@@ -83,4 +119,6 @@ align-items: center;
     transform: scale(.9);
 
 }
+
+
 </style>

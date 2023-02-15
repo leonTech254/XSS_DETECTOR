@@ -4,6 +4,8 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": {"*"}}})
+
+
 @app.route("/")
 def home():
     return "Welcome to our XSS tool"
@@ -19,3 +21,7 @@ def xss_Scanner():
         jsonify({"scan_result": response})
 
     # raid 0-increases the data for loss
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
