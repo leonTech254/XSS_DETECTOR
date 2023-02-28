@@ -2,11 +2,26 @@
     <div>
     <div class="page-wrapper">
     <div class="left">
+    <div class="leftWrapper" >
     <div style="width:80%;">
-    <div class="ScanInput">
+    <div class="ScanInput" >
         <input type="text" placeholder="Enter Website URL" v-model="searchInput">
         <span @click="ScanFunc"><i class="search-icon fa-solid  fa-magnifying-glass"></i></span>
     </div>
+    </div>
+    <div class="response-screen">
+    <div class="title">payload tested</div>
+    <ul>
+    <li v-for="(index,payload) in resposeArray" key="index">
+    {{ index }}
+    
+    </li>
+    </ul>
+    
+    
+    </div>
+
+
     </div>
     </div>
     <div class="right">
@@ -51,7 +66,8 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            searchInput: ''
+            searchInput: '',
+            resposeArray: []
         }
     },
     
@@ -66,6 +82,9 @@ export default {
                     let data = { "url": this.searchInput }
                     axios.post("/api/scan_website", data)
                         .then((res) => {
+                            let response = res.data.scan_result;
+                            this.resposeArray = response;
+                            
 
                             
                         })
@@ -94,13 +113,14 @@ export default {
     grid-template-columns:repeat(2,1fr);
     gap: 2rem;
 }
-.left
+.leftWrapper
 
 {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+width: 80%;
 
 }
 .ScanInput
@@ -151,6 +171,25 @@ align-items: center;
     font-style: italic;
     font-weight: bold;
 }
+.response-screen
+{
+    height: 20rem;
+    overflow: auto;
+    border: 2px solid green;
+    width: 100%;
+    margin-top: 2rem;
 
+
+
+
+
+}
+.response-screen .title
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
 
 </style>
