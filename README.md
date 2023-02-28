@@ -46,6 +46,11 @@ npm install
 </li>
 <li>Mutillidae: http://localhost/mutillidae/index.php?page=user-info.php</li>
 
+### SCREENSHOTS
+
+<li>landing page</li>
+![landingpage](https://github.com/leonTech254/XSS_DETECTOR/blob/main/Images/landingPage.png "Landing Page")
+
 # DEVELOPERS
 
 <li>BACKED& FRONTED: martinleontech23@gmail.com </li>
