@@ -1,27 +1,20 @@
 import requests
-from bs4 import BeautifulSoup
-
 from payloads import payloads as xss_payloads
-import re
 
 
 class XssChecker:
-
     def get_html(url):
-        response = requests.get(url)
-        return response.text
+        return url
 
-    def ScanningForxss(html):
-        ListVulnerability = []
-        soup = BeautifulSoup(html, 'html.parser')
-        for tag in soup.find_all(True):
-            if tag.name not in ['a', 'img', 'br']:
-                for attr, value in tag.attrs.items():
-                    pattern = re.compile(r"<.*script.*>")
-                    if pattern.search(value):
-                        response = f"[XSS VULNERABILITY FOUND] Tag: {tag.name}, Attribute: {attr}, Value: {value}"
-                        ListVulnerability.append(response)
-        return ListVulnerability
+    def ScanningForxss(targetWebsite):
+        ResponseList = []
+        for payload in xss_payloads:
+            responseDict = {}
+            response = requests.post(targetWebsite+payload)
+            if payload in response.text:
+                responseDict["payload"] = payload
+            else:
+                print("no payload found")
+            ResponseList.append(responseDict)
 
-        # print(ListVulnerability)
-        # return ListVulnerability
+        return ResponseList
