@@ -8,11 +8,38 @@
         <span @click="ScanFunc"><i class="search-icon fa-solid  fa-magnifying-glass"></i></span>
     </div>
     </div>
+    </div>
+    <div class="right">
+    <p>Cross-site scripting (XSS) is a type of security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can then execute within the victim's browser, potentially allowing the attacker to steal sensitive information, such as login credentials or credit card numbers, or to perform actions on behalf of the victim, such as making unauthorized purchases or sending spam.</p>
+
+    <p>
+   <div class="important"> To protect yourself against XSS attacks, it's important to be aware of the risks and to take steps to minimize your exposure. 
+        Some best practices include:</div>
+    <ul>
+    <li>Keeping your web browser and software up to date with the latest security patches and updates.</li>
+    <li>Being cautious about clicking on links or downloading attachments from unknown sources.</li>
+    <li>Using a reputable antivirus and anti-malware program to protect your computer and devices.</li>
+    <li>Enabling security features such as cross-site scripting protection in your web browser.</li>
+
+    <li>Being aware of common signs of an XSS attack, such as unexpected pop-ups or strange behavior on web pages.</li>
+    <li>Avoiding inputting personal or sensitive information on untrusted or suspicious websites.</li>
     
+    
+    
+    </ul>
+
+        
+        
+        
+        
+        
+        
+    
+    
+    </p>
     
     
     </div>
-    <div class="right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, doloremque ea? Nulla, veritatis perspiciatis! Distinctio, officiis sapiente! Commodi culpa nostrum quibusdam dolorem, iste rerum saepe fugiat, maiores reiciendis qui voluptate.</div>
     </div>
 
 
@@ -117,6 +144,12 @@ align-items: center;
 {
     transform: scale(.9);
 
+}
+.important
+{
+    color: red;
+    font-style: italic;
+    font-weight: bold;
 }
 
 
