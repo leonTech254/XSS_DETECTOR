@@ -36,8 +36,7 @@ export default {
                     alert("Enter website Url")
                 } else
                 {
-                    alert(this.searchInput);
-                    let data = { "scanWeb": this.searchInput }
+                    let data = { "url": this.searchInput }
                     axios.post("/api/scan_website", data)
                         .then((res) => {
 
