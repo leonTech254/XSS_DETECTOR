@@ -49,7 +49,10 @@ npm install
 ### SCREENSHOTS
 
 <li>landing page</li>
-![landingpage](https://github.com/leonTech254/XSS_DETECTOR/blob/main/Images/landingPage.png "Landing Page")
+
+<img src="https://github.com/leonTech254/XSS_DETECTOR/blob/main/Images/landingPage.png?raw=true"  title="landing page"/>
+<li>IMPLEMENTATION</li>
+<img src="https://github.com/leonTech254/XSS_DETECTOR/blob/main/Images/toolImplementation.png?raw=true"  title="implementation"/>
 
 # DEVELOPERS
 
