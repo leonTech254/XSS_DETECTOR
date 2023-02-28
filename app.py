@@ -16,9 +16,13 @@ def xss_Scanner():
     if request.method == "POST":
         contents = request.get_json()
         webPageUrl = contents['url']
+        print(webPageUrl)
         webFrontedCode = XssChecker.get_html(webPageUrl)
+        # print(webFrontedCode)
         response = XssChecker.ScanningForxss(html=webFrontedCode)
-        jsonify({"scan_result": response})
+        FinalResponse = jsonify({"scan_result": response})
+        print(FinalResponse)
+        return FinalResponse
 
     # raid 0-increases the data for loss
 
