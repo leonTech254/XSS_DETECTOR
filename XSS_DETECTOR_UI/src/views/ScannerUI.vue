@@ -12,8 +12,9 @@
     <div class="response-screen">
     <div class="title">payload tested</div>
     <ul>
-    <li v-for="(index,payload) in resposeArray" key="index">
-    {{ index }}
+    <li v-for="(payload,index) in resposeArray" key="index">
+    <span class="label">Vulnerable(payload)</span>==<span class="label-value"> {{ payload.payload }}</span>
+   
     
     </li>
     </ul>
@@ -191,5 +192,13 @@ width: 80%;
     color: white;
     font-weight: bold;
 }
+.response-screen .label
+{
+    color: red;
+}
 
+.label-value
+{
+    color: aqua;
+}
 </style>
